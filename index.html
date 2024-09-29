@@ -415,42 +415,23 @@
 
 </body>
 
-<style>
-    .reveal {
-        opacity: 0;
-        transform: translateY(20px); /* Adjust based on your needs */
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-
-<div class="social reveal">Social Content</div>
-<div class="token1 reveal">Token 1 Content</div>
-<div class="token2 reveal">Token 2 Content</div>
-<div class="token3 reveal">Token 3 Content</div>
-<div class="chart reveal">Chart Content</div>
-<div class="main-head reveal">Main Head Content</div>
-<div class="main-logo reveal">Main Logo Content</div>
-<div class="nav-main reveal">Navigation Content</div>
-
 <script>
-    const reveals = document.querySelectorAll('.reveal');
+    // Set opacity for elements without animation
+    document.addEventListener("DOMContentLoaded", function() {
+        // Right-side elements
+        document.querySelector(".social").style.opacity = 0.5;
+        document.querySelector(".token3").style.opacity = 0.5;
+        document.querySelector(".token2").style.opacity = 0.5;
+        document.querySelector(".token1").style.opacity = 0.5;
+        document.querySelector(".main-logo").style.opacity = 0.5;
 
-    const handleScroll = () => {
-        reveals.forEach(reveal => {
-            const rect = reveal.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                reveal.classList.add('visible');
-            }
-        });
-    };
+        // Left-side elements
+        document.querySelector(".main-head").style.opacity = 0.5;
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+        // Other directional elements
+        document.querySelector(".chart").style.opacity = 0.5;
+        document.querySelector(".nav-main").style.opacity = 0.5;
+    });
     
     // button menu nav
     function toggleMenu() {
