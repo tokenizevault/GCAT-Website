@@ -416,18 +416,103 @@
 </body>
 
 <script>
+    // Initialize ScrollReveal
+    ScrollReveal().reveal(".social", {
+        delay: 50,
+        reset: true,
+        origin: 'right',
+        distance: '20px',
+        duration: 300,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
 
-    ScrollReveal().reveal(".social", { delay: 100, reset: true, origin: 'right', distance: '20px', duration: 300 });
+    ScrollReveal().reveal(".token3", {
+        delay: 50,
+        reset: true,
+        origin: 'right',
+        distance: '500px',
+        duration: 500,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
 
-    ScrollReveal().reveal(".token3", { delay: 100, reset: true, origin: 'right', distance: '500px', duration: 500 });
-    ScrollReveal().reveal(".token2", { delay: 100, reset: true, origin: 'right', distance: '500px', duration: 500 });
-    ScrollReveal().reveal(".token1", { delay: 100, reset: true, origin: 'right', distance: '500px', duration: 500 });
+    ScrollReveal().reveal(".token2", {
+        delay: 50,
+        reset: true,
+        origin: 'right',
+        distance: '500px',
+        duration: 500,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
 
-    ScrollReveal().reveal(".chart", { delay: 100, reset: true, origin: 'bottom', distance: '500px', duration: 300 });
-    ScrollReveal().reveal(".main-head", { delay: 100, reset: true, origin: 'left', distance: '500px', duration: 300 });
-    ScrollReveal().reveal(".main-logo", { delay: 100, reset: true, origin: 'right', distance: '500px', duration: 300 });
-    ScrollReveal().reveal(".nav-main", { delay: 100, reset: true, origin: 'top', distance: '20px', duration: 300 });
+    ScrollReveal().reveal(".token1", {
+        delay: 50,
+        reset: true,
+        origin: 'right',
+        distance: '500px',
+        duration: 500,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
 
+    ScrollReveal().reveal(".chart", {
+        delay: 50,
+        reset: true,
+        origin: 'bottom',
+        distance: '500px',
+        duration: 300,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
+
+    ScrollReveal().reveal(".main-head", {
+        delay: 50,
+        reset: true,
+        origin: 'left',
+        distance: '500px',
+        duration: 300,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
+
+    ScrollReveal().reveal(".main-logo", {
+        delay: 50,
+        reset: true,
+        origin: 'right',
+        distance: '500px',
+        duration: 300,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
+
+    ScrollReveal().reveal(".nav-main", {
+        delay: 50,
+        reset: true,
+        origin: 'top',
+        distance: '20px',
+        duration: 300,
+        opacity: 0,
+        afterReveal: function(el) {
+            el.style.opacity = 1;
+        }
+    });
+    
     // button menu nav
     function toggleMenu() {
         var icon = document.getElementById("menuIcon");
