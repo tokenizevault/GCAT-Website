@@ -415,103 +415,42 @@
 
 </body>
 
+<style>
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px); /* Adjust based on your needs */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<div class="social reveal">Social Content</div>
+<div class="token1 reveal">Token 1 Content</div>
+<div class="token2 reveal">Token 2 Content</div>
+<div class="token3 reveal">Token 3 Content</div>
+<div class="chart reveal">Chart Content</div>
+<div class="main-head reveal">Main Head Content</div>
+<div class="main-logo reveal">Main Logo Content</div>
+<div class="nav-main reveal">Navigation Content</div>
+
 <script>
-    // Initialize ScrollReveal
-    ScrollReveal().reveal(".social", {
-        delay: 50,
-        reset: true,
-        origin: 'right',
-        distance: '20px',
-        duration: 300,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
+    const reveals = document.querySelectorAll('.reveal');
 
-    ScrollReveal().reveal(".token3", {
-        delay: 50,
-        reset: true,
-        origin: 'right',
-        distance: '500px',
-        duration: 500,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
+    const handleScroll = () => {
+        reveals.forEach(reveal => {
+            const rect = reveal.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                reveal.classList.add('visible');
+            }
+        });
+    };
 
-    ScrollReveal().reveal(".token2", {
-        delay: 50,
-        reset: true,
-        origin: 'right',
-        distance: '500px',
-        duration: 500,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
-
-    ScrollReveal().reveal(".token1", {
-        delay: 50,
-        reset: true,
-        origin: 'right',
-        distance: '500px',
-        duration: 500,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
-
-    ScrollReveal().reveal(".chart", {
-        delay: 50,
-        reset: true,
-        origin: 'bottom',
-        distance: '500px',
-        duration: 300,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
-
-    ScrollReveal().reveal(".main-head", {
-        delay: 50,
-        reset: true,
-        origin: 'left',
-        distance: '500px',
-        duration: 300,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
-
-    ScrollReveal().reveal(".main-logo", {
-        delay: 50,
-        reset: true,
-        origin: 'right',
-        distance: '500px',
-        duration: 300,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
-
-    ScrollReveal().reveal(".nav-main", {
-        delay: 50,
-        reset: true,
-        origin: 'top',
-        distance: '20px',
-        duration: 300,
-        opacity: 0,
-        afterReveal: function(el) {
-            el.style.opacity = 1;
-        }
-    });
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     
     // button menu nav
     function toggleMenu() {
