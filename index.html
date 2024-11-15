@@ -416,28 +416,43 @@
 </body>
 
 <script>
+    // Button menu nav
+    function toggleMenu() {
+        var icon = document.getElementById("menuIcon");
+        var navbar = document.getElementById("navbar-default");
+
+        if (navbar.style.display === 'none' || navbar.style.display === '') {
+            icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;"><path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path></svg>';
+            navbar.style.display = 'block';
+        } else {
+            icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>';
+            navbar.style.display = 'none';
+        }
+    }
+
+    // Clipboard copy text change
+    function changeCopyText(button) {
+        var copyTextElement = button.querySelector('.copy-text');
+        if (copyTextElement) {
+            copyTextElement.textContent = 'copied';
+        }
+    }
+
+    // ClipboardJS initialization
     document.addEventListener('DOMContentLoaded', function () {
-        const menuIcon = document.querySelector('#menu-icon');
-        const navbar = document.querySelector('#navbar-default'); // Ensure correct ID
-        const navbg = document.querySelector('.nav-bg');
-
-        // Event listener for menu toggle
-        menuIcon.addEventListener('click', function() {
-            // Toggle classes for smooth transition
-            menuIcon.classList.toggle('bx-x');
-            navbar.classList.toggle('active');
-            navbg.classList.toggle('active');
-        });
-
-        // Clipboard functionality
         var clipboard = new ClipboardJS('.js-clipboard');
-        clipboard.on('success', function(e) {
-            // Optional: Change the text after copying
-            var copyTextElement = e.trigger.querySelector('.copy-text');
-            if (copyTextElement) {
-                copyTextElement.textContent = 'Copied';
-            }
-        });
+    });
+
+    // Toggling menu with button
+    const menuIcon = document.querySelector('#menuIcon'); // Ensure the correct ID
+    const navbar = document.querySelector('.navbar');
+    const navbg = document.querySelector('.nav-bg');
+    
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active'); // Toggle 'active' class instead of direct display change
+        navbg.classList.toggle('active');
     });
 </script>
+
 </html>
