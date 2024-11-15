@@ -430,39 +430,22 @@
     var clipboard = new ClipboardJS('.js-clipboard');
 });
 
-// Toggle menu function
+// Mobile menu toggle function
 function toggleMenu() {
     const icon = document.getElementById("menuIcon");
     const navbar = document.getElementById("navbar-default");
 
     if (navbar.style.display === 'none' || navbar.style.display === '') {
+        // Show the menu
+        navbar.style.display = 'block';
         icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
             <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
         </svg>`;
-        navbar.style.display = 'block';
     } else {
+        // Hide the menu
+        navbar.style.display = 'none';
         icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
             <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
         </svg>`;
-        navbar.style.display = 'none';
-    }
-}
-
-// Menu icon toggle with navbar and nav background
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
-const navbg = document.querySelector('.nav-bg');
-
-menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-    navbg.classList.toggle('active');
-});
-
-// Button copy text change
-function changeCopyText(button) {
-    const copyTextElement = button.querySelector('.copy-text');
-    if (copyTextElement) {
-        copyTextElement.textContent = 'copied';
     }
 }
