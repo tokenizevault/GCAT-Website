@@ -428,16 +428,6 @@
 
     // ClipboardJS initialization
     var clipboard = new ClipboardJS('.js-clipboard');
-
-    // Mobile Home Button functionality
-    const mobileHomeBtn = document.getElementById("mobile-home-btn");
-    mobileHomeBtn.addEventListener("click", () => {
-        // Navigate to the homepage
-        window.location.href = '/'; // Replace '/' with your homepage URL
-
-        // Alternatively, scroll to top
-        // window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
 });
 
 // Toggle menu function
@@ -445,8 +435,17 @@ function toggleMenu() {
     const icon = document.getElementById("menuIcon");
     const navbar = document.getElementById("navbar-default");
 
-    navbar.style.display = (navbar.style.display === 'block') ? 'none' : 'block';
-    icon.classList.toggle('menu-open'); // Use CSS for style changes
+    if (navbar.style.display === 'none' || navbar.style.display === '') {
+        icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
+            <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+        </svg>`;
+        navbar.style.display = 'block';
+    } else {
+        icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
+            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+        </svg>`;
+        navbar.style.display = 'none';
+    }
 }
 
 // Menu icon toggle with navbar and nav background
@@ -464,6 +463,6 @@ menuIcon.addEventListener('click', () => {
 function changeCopyText(button) {
     const copyTextElement = button.querySelector('.copy-text');
     if (copyTextElement) {
-        copyTextElement.textContent = 'Copied!';
+        copyTextElement.textContent = 'copied';
     }
 }
