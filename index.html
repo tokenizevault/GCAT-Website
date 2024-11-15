@@ -416,57 +416,44 @@
 </body>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
     // Set opacity for elements without animation
-    document.addEventListener("DOMContentLoaded", function() {
-        // Right-side elements
-        document.querySelector(".social").style.opacity = 1;
-        document.querySelector(".token3").style.opacity = 1;
-        document.querySelector(".token2").style.opacity = 1;
-        document.querySelector(".token1").style.opacity = 1;
-        document.querySelector(".main-logo").style.opacity = 1;
-
-        // Left-side elements
-        document.querySelector(".main-head").style.opacity = 1;
-
-        // Other directional elements
-        document.querySelector(".chart").style.opacity = 1;
-        document.querySelector(".nav-main").style.opacity = 1;
-    });
-    
-    // button menu nav
-    function toggleMenu() {
-        var icon = document.getElementById("menuIcon");
-        var navbar = document.getElementById("navbar-default");
-
-        if (navbar.style.display === 'none' || navbar.style.display === '') {
-            icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;"><path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path></svg>';
-            navbar.style.display = 'block';
-        } else {
-            icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>';
-            navbar.style.display = 'none';
+    const elements = [".social", ".token3", ".token2", ".token1", ".main-logo", ".main-head", ".chart", ".nav-main"];
+    elements.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.style.opacity = 1;
         }
-    }
-
-    function changeCopyText(button) {
-        var copyTextElement = button.querySelector('.copy-text');
-        if (copyTextElement) {
-            copyTextElement.textContent = 'copied';
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var clipboard = new ClipboardJS('.js-clipboard');
     });
 
+    // ClipboardJS initialization
+    var clipboard = new ClipboardJS('.js-clipboard');
+});
 
-    const menuIcon = document.querySelector('#menu-icon');
-    const navbar = document.querySelector('.navbar');
-    const navbg = document.querySelector('.nav-bg');
-    menuIcon.addEventListener('click', () => {
-        menuIcon.classList.toggle('bx-x');
-        navbar.classList.toggle('active');
-        navbg.classList.toggle('active');
-    });
-</script>
+// Toggle menu function
+function toggleMenu() {
+    const icon = document.getElementById("menuIcon");
+    const navbar = document.getElementById("navbar-default");
 
-</html>
+    navbar.style.display = (navbar.style.display === 'block') ? 'none' : 'block';
+    icon.classList.toggle('menu-open'); // Use CSS for style changes
+}
+
+// Menu icon toggle with navbar and nav background
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+const navbg = document.querySelector('.nav-bg');
+
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+    navbg.classList.toggle('active');
+});
+
+// Button copy text change
+function changeCopyText(button) {
+    const copyTextElement = button.querySelector('.copy-text');
+    if (copyTextElement) {
+        copyTextElement.textContent = 'Copied!';
+    }
+}
