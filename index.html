@@ -428,6 +428,16 @@
 
     // ClipboardJS initialization
     var clipboard = new ClipboardJS('.js-clipboard');
+
+    // Mobile Home Button functionality
+    const mobileHomeBtn = document.getElementById("mobile-home-btn");
+    mobileHomeBtn.addEventListener("click", () => {
+        // Navigate to the homepage
+        window.location.href = '/'; // Replace '/' with your homepage URL
+
+        // Alternatively, scroll to top
+        // window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
 
 // Toggle menu function
