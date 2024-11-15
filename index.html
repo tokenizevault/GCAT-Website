@@ -421,14 +421,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Navbar</title>
+    <title>Mobile Navbar with Toggle</title>
     <style>
-        .navbar { display: none; position: fixed; top: 0; right: 0; width: 200px; height: 100%; background: #222; padding: 20px; box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); z-index: 1000; }
-        .nav-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px; }
-        .nav-list li a { color: #fff; font-size: 18px; text-decoration: none; }
-        .nav-list li a:hover { color: cyan; }
-        .menu-icon { position: fixed; top: 20px; right: 20px; z-index: 1100; cursor: pointer; }
-        @media (min-width: 768px) { .navbar { display: flex; flex-direction: row; position: static; background: transparent; box-shadow: none; padding: 0; } .menu-icon { display: none; } }
+        /* Navbar styles */
+        .navbar {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            background: #222;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-list li a:hover {
+            color: cyan;
+        }
+
+        /* Menu icon */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 768px) {
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .menu-icon {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -442,35 +494,69 @@
     <!-- Mobile Navigation -->
     <nav id="navbar-default" class="navbar">
         <ul class="nav-list">
-            <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
-            <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
-            <li><a href="#tokenomics" onclick="scrollToSection('tokenomics')">Tokenomics</a></li>
-            <li><a href="#social" onclick="scrollToSection('social')">Social</a></li>
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#tokenomics" onclick="toggleMenu()">Tokenomics</a></li>
+            <li><a href="#social" onclick="toggleMenu()">Social</a></li>
         </ul>
     </nav>
 
-    <!-- Content Sections -->
-    <div id="home" style="margin-top: 50px;"><h1>Welcome to Home</h1></div>
-    <div id="about" style="margin-top: 50px;"><h1>About Us</h1></div>
-    <div id="tokenomics" style="margin-top: 50px;"><h1>Tokenomics Info</h1></div>
-    <div id="social" style="margin-top: 50px;"><h1>Follow Us</h1></div>
+    <!-- Placeholder content -->
+    <div id="home" style="margin-top: 50px;">
+        <h1>Welcome to the Home Section</h1>
+    </div>
+    <div id="about" style="margin-top: 50px;">
+        <h1>About Us</h1>
+    </div>
+    <div id="tokenomics" style="margin-top: 50px;">
+        <h1>Tokenomics Information</h1>
+    </div>
+    <div id="social" style="margin-top: 50px;">
+        <h1>Follow Us on Social Media</h1>
+    </div>
 
     <script>
-        // Toggle the menu display
+        // Mobile menu toggle function
         function toggleMenu() {
-            const navbar = document.getElementById("navbar-default");
             const icon = document.getElementById("menuIcon");
-            navbar.style.display = navbar.style.display === 'block' ? 'none' : 'block';
-            icon.innerHTML = navbar.style.display === 'block' 
-                ? '<path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>' 
-                : '<path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>';
+            const navbar = document.getElementById("navbar-default");
+
+            if (navbar.style.display === 'none' || navbar.style.display === '') {
+                // Show the menu
+                navbar.style.display = 'block';
+                icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
+                    <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+                </svg>`;
+            } else {
+                // Hide the menu
+                navbar.style.display = 'none';
+                icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
+                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                </svg>`;
+            }
         }
 
-        // Smooth scroll to section
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-            toggleMenu();  // Close the menu after selection
+        // Button copy text change
+        function changeCopyText(button) {
+            const copyTextElement = button.querySelector('.copy-text');
+            if (copyTextElement) {
+                copyTextElement.textContent = 'Copied!';
+            }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var clipboard = new ClipboardJS('.js-clipboard');
+        });
+
+        // Menu icon toggle with navbar and nav background
+        const menuIcon = document.querySelector('#menu-icon');
+        const navbar = document.querySelector('.navbar');
+        const navbg = document.querySelector('.nav-bg');
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+            navbg.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
