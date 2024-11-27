@@ -396,13 +396,13 @@
 
 <!-- Team and Founder Section -->
 <section id="team" class="p-10 text-center text-white bg-transparent">
-    <h2 class="text-4xl font-extrabold text-neon-green mb-6 animate-pulse">Meet Our Team & Founder</h2>
+    <h2 class="text-4xl font-extrabold text-neon-green mb-6">Meet Our Team & Founder</h2>
     <p class="text-lg text-neon-green mb-8">Our team is composed of experienced professionals passionate about revolutionizing the DeFi space.</p>
 
     <!-- Team Member 1 -->
     <div class="flex justify-center flex-wrap">
         <div class="max-w-xs m-4 bg-black p-6 rounded-lg shadow-2xl hover:shadow-xl transition-shadow">
-            <!-- Logo Image for Tokenize (using the full opacity PNG image) -->
+            <!-- Tokenize Logo -->
             <img src="tokenize.png" alt="Tokenize - Founder & CEO" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-neon-green shadow-lg opacity-100">
             <h3 class="text-2xl font-semibold text-neon-green mb-2">Tokenize</h3>
             <p class="text-sm text-neon-green mb-4">Founder & CEO</p>
@@ -411,7 +411,7 @@
     </div>
 </section>
 
-<!-- Add some custom CSS for the neon effect -->
+<!-- Add CSS for Neon Green and Effects -->
 <style>
     .text-neon-green {
         color: #39FF14; /* Neon Green */
@@ -419,23 +419,14 @@
     .bg-transparent {
         background-color: transparent; /* Transparent background */
     }
-    /* Glowing neon effect on hover */
+    .bg-black {
+        background-color: #000000; /* Fully black box */
+    }
     .text-neon-green:hover {
-        text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14;
+        text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14; /* Neon glow effect */
     }
-    /* Pulsing animation for header */
-    .animate-pulse {
-        animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.05); opacity: 0.7; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-
-    /* Adjust shadow and hover effects */
     .hover\:shadow-xl:hover {
-        box-shadow: 0 10px 30px rgba(57, 255, 20, 0.4);
+        box-shadow: 0 10px 30px rgba(57, 255, 20, 0.4); /* Neon green shadow */
     }
 </style>
     
