@@ -490,9 +490,8 @@
     </footer>
 
 </body>
-
-<script>
     
+<script>
 // Toggle Navbar Menu for Mobile
 function toggleMenu() {
     const menuButton = document.getElementById("menuIcon");
@@ -515,23 +514,12 @@ function toggleMenu() {
     }
 }
 
-// Smooth Scrolling and Navbar Close on Link Click
+// Close Navbar on Link Click (No Smooth Scrolling)
 document.querySelectorAll('#navbar-default a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();  // Prevent default link behavior
-        const target = document.querySelector(this.getAttribute('href'));  // Get the target section
-
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-
-            // Close menu on mobile after navigating
-            const navbar = document.getElementById("navbar-default");
-            if (!navbar.classList.contains('hidden')) {
-                toggleMenu();
-            }
+    anchor.addEventListener('click', function () {
+        const navbar = document.getElementById("navbar-default");
+        if (!navbar.classList.contains('hidden')) {
+            toggleMenu();
         }
     });
 });
