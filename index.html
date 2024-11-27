@@ -480,56 +480,49 @@
         
     </section>
 
-    <!-- Footer Section -->
-<footer class="bg-gray-900 text-white py-4 text-center mt-10">
-    <div class="container mx-auto">
-        <p class="text-sm text-white">Copyright Grumpy Cat Token © 2025. All rights reserved</p>
-    </div>
-</footer>
-
-<script>
+    <script>
 // Toggle Navbar Menu for Mobile
 function toggleMenu() {
-    var icon = document.getElementById("menuIcon");
-    var navbar = document.getElementById("navbar-default");
+    const menuButton = document.getElementById("menuIcon");
+    const navbar = document.getElementById("navbar-default");
 
-    // Toggle 'hidden' class for navbar visibility
+    // Toggle visibility
     navbar.classList.toggle('hidden');
 
-    // Update icon based on navbar visibility
+    // Update the menu icon (menu or close icon)
     if (navbar.classList.contains('hidden')) {
-        icon.innerHTML = `
+        menuButton.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
                 <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
             </svg>`;
     } else {
-        icon.innerHTML = `
+        menuButton.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
-                <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+                <path d="M6 6h12v2H6zM6 11h12v2H6zM6 16h12v2H6z"></path>
             </svg>`;
     }
 }
 
-// Smooth Scrolling to Sections
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth Scrolling and Navbar Close on Link Click
+document.querySelectorAll('#navbar-default a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();  // Prevent default link behavior (jumping)
+        e.preventDefault();  // Prevent default link behavior
         const target = document.querySelector(this.getAttribute('href'));  // Get the target section
 
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
-                block: 'start' // Ensures the section scrolls to the top of the viewport
+                block: 'start'
             });
 
-            // Close navbar after clicking on mobile (only if navbar is open)
+            // Close menu on mobile after navigating
             const navbar = document.getElementById("navbar-default");
             if (!navbar.classList.contains('hidden')) {
-                toggleMenu(); // Close the menu after navigating
+                toggleMenu();
             }
         }
     });
 });
 </script>
-    
+</body>
 </html>
