@@ -25,36 +25,43 @@
 <body class="font-Montserrat bg-black">
 
     <!-- Header Section -->
-    <nav class="nav-main">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/" class="flex items-center space-x-3">
-                <img src="images/logo1.png" class="h-12 rounded-full md:h-14" alt="Grumpy Cat Logo" />
-                <span class="md:hidden lg:block text-lg md:text-3xl font-extrabold text-blue-500"
-                    style="background-image: linear-gradient(to right, rgb(255, 153, 0), rgb(255, 153, 0));
-                    color: transparent; -webkit-background-clip: text; background-clip: text;">Grumpy Cat</span>
-            </a>
-            <button id="menuButton" type="button" style="color: rgb(255, 136, 0);"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-sm md:hidden hover:bg-cyan-500">
-                <span id="menuIcon">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </span>
-            </button>
-            <div id="navbar-default" class="hidden w-full md:block md:w-auto">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded md:flex-row md:space-x-8 md:mt-0 md:border-0">
-                    <li><a href="#home" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">HOME</a></li>
-                    <li><a href="#about" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">ABOUT</a></li>
-                    <li><a href="#roadmap" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">ROADMAP</a></li>
-                    <li><a href="#tokenomics" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">TOKENOMICS</a></li>
-                    <li><a href="#partnership" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">PARTNERSHIP</a></li>
-                    <li><a href="#social" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">SOCIALS</a></li>
-                </ul>
-            </div>
-            <!-- Join The Community Button -->
+<nav class="nav-main">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <!-- Logo Section -->
+        <a href="/" class="flex items-center space-x-3">
+            <img src="images/logo1.png" class="h-12 rounded-full md:h-14" alt="Grumpy Cat Logo" />
+            <span class="md:hidden lg:block text-lg md:text-3xl font-extrabold text-blue-500"
+                style="background-image: linear-gradient(to right, rgb(255, 153, 0), rgb(255, 153, 0));
+                color: transparent; -webkit-background-clip: text; background-clip: text;">Grumpy Cat</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuButton" type="button" style="color: rgb(255, 136, 0);"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-sm md:hidden hover:bg-cyan-500"
+            onclick="toggleMenu()">
+            <span id="menuIcon">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div id="navbar-default" class="hidden w-full md:block md:w-auto">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                <li><a href="#home" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">HOME</a></li>
+                <li><a href="#about" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">ABOUT</a></li>
+                <li><a href="#roadmap" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">ROADMAP</a></li>
+                <li><a href="#tokenomics" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">TOKENOMICS</a></li>
+                <li><a href="#partnership" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">PARTNERSHIP</a></li>
+                <li><a href="#social" class="block py-2 px-3 text-white text-lg lg:text-xl hover:text-pink-500">SOCIALS</a></li>
+            </ul>
+        </div>
+
+        <!-- Join The Community Button -->
         <div id="navbar-default-btn" class="hidden md:block">
-            <a href="https://linktr.ee/GCATToken">
+            <a href="https://linktr.ee/GCATToken" target="_blank">
                 <button type="button"
                     class="text-white bg-black hover:bg-white hover:text-black border border-white focus:outline-none focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5">
                     Join The Community
@@ -428,32 +435,31 @@
     </section>
 
 
-    <!-- Footer -->
+    <!-- Footer Section -->
 <footer class="bg-gray-900 text-white py-4 text-center mt-10">
     <div class="container mx-auto">
-        <!-- Disclaimer -->
-        <p class="text-sm text-white">Copyright Grumpy Cat Token © 2025. All rights reserved</p>
+        <p class="text-sm text-white">Copyright © 2024. All rights reserved</p>
     </div>
 </footer>
 
 <script>
-    // Toggle Navbar Menu (Mobile)
+    // Toggle Navbar Menu for Mobile
     function toggleMenu() {
-        const icon = document.getElementById("menuIcon");
-        const navbar = document.getElementById("navbar-default");
-
-        if (navbar.style.display === 'none' || navbar.style.display === '') {
+        var icon = document.getElementById("menuIcon");
+        var navbar = document.getElementById("navbar-default");
+        
+        if (navbar.classList.contains('hidden')) {
+            navbar.classList.remove('hidden');
             icon.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
-                    <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2H7z"></path>
+                    <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
                 </svg>`;
-            navbar.style.display = 'block'; // Show navbar
         } else {
+            navbar.classList.add('hidden');
             icon.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
                     <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
                 </svg>`;
-            navbar.style.display = 'none'; // Hide navbar
         }
     }
 
@@ -466,14 +472,13 @@
                 target.scrollIntoView({ behavior: 'smooth' });
             }
 
-            // Hide menu after clicking (useful for mobile)
+            // Close navbar after clicking on mobile
             const navbar = document.getElementById("navbar-default");
-            if (navbar.style.display === 'block') {
+            if (!navbar.classList.contains('hidden')) {
                 toggleMenu();
             }
         });
     });
 </script>
-
 </body>
-</html>
+</html>       
