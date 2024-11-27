@@ -428,33 +428,61 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-4 text-center mt-10">
-        <div class="container mx-auto">
-            <p class="text-sm">Copyright Grumpy Cat Token © 2025. All rights reserved</p>
-        </div>
-    </footer>
+<footer class="bg-gray-900 text-white py-4 text-center mt-10">
+    <div class="container mx-auto">
+        <!-- Disclaimer, social media icons, copyright here -->
+        <p class="text-sm text-white">Copyright Grumpy Cat Token © 2025. All rights reserved</p>
+    </div>
+</footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Toggle Navbar Menu (Mobile)
-        function toggleMenu() {
-            const navbar = document.getElementById('navbar-default');
-            navbar.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide the navbar
-        }
-
-        // Smooth Scrolling to Sections
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the target section
-            }
-
-            // Hide Navbar Menu on Mobile After Click
-            const navbar = document.getElementById('navbar-default');
-            if (!navbar.classList.contains('hidden')) {
-                navbar.classList.add('hidden'); // Close the navbar on mobile after clicking
-            }
-        }
-    </script>
 </body>
+
+<script>
+    // Button menu toggle for Navbar
+    function toggleMenu() {
+        var icon = document.getElementById("menuIcon");
+        var navbar = document.getElementById("navbar-default");
+
+        if (navbar.style.display === 'none' || navbar.style.display === '') {
+            icon.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
+                    <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+                </svg>`;
+            navbar.style.display = 'block';
+        } else {
+            icon.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: cyan;">
+                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                </svg>`;
+            navbar.style.display = 'none';
+        }
+    }
+
+    // Change copy button text on clipboard copy
+    function changeCopyText(button) {
+        var copyTextElement = button.querySelector('.copy-text');
+        if (copyTextElement) {
+            copyTextElement.textContent = 'Copied';
+        }
+    }
+
+    // ClipboardJS initialization
+    document.addEventListener('DOMContentLoaded', function () {
+        var clipboard = new ClipboardJS('.js-clipboard');
+    });
+
+    // Mobile menu icon toggle
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('.navbar');
+    const navbg = document.querySelector('.nav-bg');
+
+    if (menuIcon && navbar && navbg) {
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+            navbg.classList.toggle('active');
+        });
+    }
+</script>
+
 </html>
