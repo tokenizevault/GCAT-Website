@@ -438,20 +438,20 @@
         // Toggle Navbar Menu (Mobile)
         function toggleMenu() {
             const navbar = document.getElementById('navbar-default');
-            navbar.classList.toggle('hidden');
+            navbar.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide the navbar
         }
 
         // Smooth Scrolling to Sections
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
+                section.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the target section
             }
 
             // Hide Navbar Menu on Mobile After Click
             const navbar = document.getElementById('navbar-default');
             if (!navbar.classList.contains('hidden')) {
-                navbar.classList.add('hidden');
+                navbar.classList.add('hidden'); // Close the navbar on mobile after clicking
             }
         }
     </script>
