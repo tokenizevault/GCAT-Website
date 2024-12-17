@@ -41,22 +41,21 @@
     onclick="toggleMenu()">
     <span id="menuIcon">
         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15" />
+            <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
         </svg>
     </span>
 </button>
 
-<!-- Navbar Links -->
-<div id="navbar-default" class="hidden w-full md:block md:w-auto overflow-x-auto">
-    <ul class="font-medium flex flex-row p-2 md:p-0 space-x-4 md:mt-0 md:border-0">
-        <li><a href="#home" class="block py-1 px-2 text-white text-md lg:text-lg hover:text-pink-500">HOME</a></li>
-        <li><a href="#about" class="block py-1 px-2 text-white text-md lg:text-lg hover:text-pink-500">ABOUT</a></li>
-        <li><a href="#roadmap" class="block py-1 px-2 text-white text-md lg:text-lg hover:text-pink-500">ROADMAP</a></li>
-        <li><a href="#tokenomics" class="block py-1 px-2 text-white text-md lg:text-lg hover:text-pink-500">TOKENOMICS</a></li>
-        <li><a href="#partnership" class="block py-1 px-2 text-white text-md lg:text-lg hover:text-pink-500">PARTNERSHIP</a></li>
-        <li><a href="#social" class="block py-1 px-2 text-white text-md lg:text-lg hover:text-pink-500">SOCIALS</a></li>
-        <li><a href="whitepaper.pdf" target="_blank" class="block py-1 px-2 text-white text-md lg:text-lg hover:text-pink-500">WHITEPAPER</a></li>
+<!-- Navbar Links (Pop-Up Menu) -->
+<div id="navbar-default" class="hidden fixed top-16 left-0 w-full bg-black text-white md:hidden z-50">
+    <ul class="font-medium flex flex-col space-y-4 p-4">
+        <li><a href="#home" class="block py-2 px-4 text-md lg:text-lg hover:text-pink-500">HOME</a></li>
+        <li><a href="#about" class="block py-2 px-4 text-md lg:text-lg hover:text-pink-500">ABOUT</a></li>
+        <li><a href="#roadmap" class="block py-2 px-4 text-md lg:text-lg hover:text-pink-500">ROADMAP</a></li>
+        <li><a href="#tokenomics" class="block py-2 px-4 text-md lg:text-lg hover:text-pink-500">TOKENOMICS</a></li>
+        <li><a href="#partnership" class="block py-2 px-4 text-md lg:text-lg hover:text-pink-500">PARTNERSHIP</a></li>
+        <li><a href="#social" class="block py-2 px-4 text-md lg:text-lg hover:text-pink-500">SOCIALS</a></li>
+        <li><a href="whitepaper.pdf" target="_blank" class="block py-2 px-4 text-md lg:text-lg hover:text-pink-500">WHITEPAPER</a></li>
     </ul>
 </div>
 
