@@ -72,9 +72,8 @@
 
     <!-- Hero Section -->
 <section class="flex flex-wrap justify-center items-center relative text-white text-center py-10 bg-cover bg-center">
-    <div class="container min-w-fit hero relative z-10 lg:h-screen flex justify-center flex-col-reverse md:flex-row lg:flex-row items-center mx-5 lg:mx-10 ">
+    <div class="container min-w-fit hero relative z-10 lg:h-screen flex justify-center flex-col-reverse md:flex-row lg:flex-row items-center mx-5 lg:mx-10">
         <div class="main-head text-white w-full m-0 md:m-10 lg:m-0 md:w-1/3 lg:w-1/2 flex flex-col justify-center items-center gap-10">
-
             <h1 class="text-3xl text-center lg:text-5xl font-extrabold break-words lg:px-4 mt-6 lg:mt-0">
                 <br>
                 <span class="text-center text-4xl lg:text-7xl text-cyan-500 glow-text"
@@ -87,7 +86,7 @@
             <a href="https://app.uniswap.org/swap?outputCurrency=0xafe090a314742b79d57657fa6880558b2d55b974&chain=polygon"
                 class="w-full md:w-1/2 lg:w-1/2">
                 <button type="button"
-                    class="text-white flex justify-center gap-x-2 items-center w-full bg-black hover:bg-white hover:text-black border border-white focus:outline-none focus:ring-4 focus:ring-white font-medium rounded-full text-lg px-5 py-2.5 me-2 mb-2 ">
+                    class="text-white flex justify-center gap-x-2 items-center w-full bg-black hover:bg-white hover:text-black border border-white focus:outline-none focus:ring-4 focus:ring-white font-medium rounded-full text-lg px-5 py-2.5 me-2 mb-2">
                     BUY
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"
                         class="svgg">
@@ -124,29 +123,10 @@
         </div>
 
         <div class="main-logo w-80 md:96 lg:w-1/2">
-            <img class="imglogo" src="images/logo3.png" alt="Animated etf logo">
+            <img class="imglogo" src="images/logo3.png" alt="Animated ETF logo">
         </div>
     </div>
 </section>
-
-<script>
-    function copyToClipboard() {
-        const input = document.getElementById('hs-clipboard-input');
-        input.select();
-        input.setSelectionRange(0, 99999); // For mobile devices
-
-        try {
-            document.execCommand('copy');
-            const copyBtn = document.getElementById('copy-text');
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => {
-                copyBtn.textContent = 'Copy';
-            }, 2000);
-        } catch (err) {
-            console.error('Failed to copy: ', err);
-        }
-    }
-</script>
 
 
         <!-- <div class="chart z-10 w-full flex flex-col justify-center items-center ">
