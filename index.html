@@ -128,6 +128,20 @@
     </div>
 </section>
 
+    function copyToClipboard() {
+    const input = document.getElementById('hs-clipboard-input');
+    navigator.clipboard.writeText(input.value)
+        .then(() => {
+            const copyBtn = document.getElementById('copy-text');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyBtn.textContent = 'Copy';
+            }, 2000);
+        })
+        .catch((err) => {
+            console.error('Failed to copy: ', err);
+        });
+}
 
         <!-- <div class="chart z-10 w-full flex flex-col justify-center items-center ">
 
