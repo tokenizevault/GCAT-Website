@@ -98,15 +98,15 @@
             </a>
 
             <div class="flex flex-col md:flex-row justify-center items-center gap-3 w-full">
-                <p class="text-white text-sm">Grumpy Cat $GCAT Contract Address:</p>
+                <p class="text-white text-sm">Grumpy Cat Token Contract Address:</p>
                 <div id="hs-clipboard-basic" class="text-white border border-blue-500 rounded-lg w-full md:w-2/3">
                     <input id="hs-clipboard-input" type="text"
                         class="py-2 px-3 rounded-lg text-sm w-full placeholder:text-white focus:border-blue-500 focus:ring-blue-500 bg-gray-900 border-gray-700"
                         value="0xafe090a314742b79d57657fa6880558b2d55b974" readonly>
                 </div>
                 <button type="button"
-                    class="p-2 flex items-center gap-2 text-sm font-medium rounded-lg border border-blue-500 bg-gray-500 text-white hover:bg-blue-600"
-                    onclick="copyToClipboard()">
+                    id="copy-button"
+                    class="p-2 flex items-center gap-2 text-sm font-medium rounded-lg border border-blue-500 bg-gray-500 text-white hover:bg-blue-600">
                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
@@ -131,20 +131,35 @@
 
 <!-- JavaScript for Clipboard -->
 <script>
+    // Debounce function to reduce event handler blocking
+    function debounce(func, wait = 100) {
+        let timeout;
+        return function (...args) {
+            const context = this;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
+
+    // Clipboard Copy Function
     function copyToClipboard() {
         const input = document.getElementById('hs-clipboard-input');
-        navigator.clipboard.writeText(input.value).then(() => {
-            const copyBtn = document.getElementById('copy-text');
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => {
-                copyBtn.textContent = 'Copy';
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
-        });
+        navigator.clipboard.writeText(input.value)
+            .then(() => {
+                const copyBtn = document.getElementById('copy-text');
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy';
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
     }
-</script>
 
+    // Attach Event Listener with Debouncing
+    document.getElementById('copy-button').addEventListener('click', debounce(copyToClipboard));
+</script>
 
         <!-- <div class="chart z-10 w-full flex flex-col justify-center items-center ">
 
