@@ -287,58 +287,72 @@
 </section>
 
     <!-- Tokenomics Section -->
-    <section id="tokenomics" class=" text-white py-16">
-        <div class="container mx-auto text-center">
-            <div class="token1 flex flex-col-reverse md:flex-row md:items-center justify-start mx-4 md:mx-6 lg:mx-8">
-                <h1 class="token text-5xl lg:text-7xl font-extrabold mb-8 text-white ">Tokenomics</h1>
-                <img class="w-32 md:w-42 lg:w-64 px-5" src="images/tokenomics.png" alt="">
+<section id="tokenomics" class="text-white py-16">
+    <div class="container mx-auto text-center">
+        <div class="token1 flex flex-col-reverse md:flex-row md:items-center justify-start mx-4 md:mx-6 lg:mx-8">
+            <h1 class="token text-5xl lg:text-7xl font-extrabold mb-8 text-white">Tokenomics</h1>
+            <img class="w-32 md:w-42 lg:w-64 px-5" src="images/tokenomics.png" alt="Tokenomics Image">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 m-10 align-middle">
+            <!-- Total Supply -->
+            <div class="token1 p-6 border-4 border-white rounded-lg shadow-2xl">
+                <h1 class="text-3xl font-bold mb-4 text-white">TOTAL SUPPLY</h1>
+                <p class="tok pt-5">100,000,000,000 GCAT Token</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 m-10 align-middle ">
-                <!-- Total Supply -->
-                <div class="token1 p-6 border-4 border-white rounded-lg shadow-2xl">
-                    <h1 class="text-3xl font-bold mb-4 text-white">TOTAL SUPPLY</h1>
-                    <p class="tok pt-5">100,000,000,000 GCAT Token </p>
-                </div>
-                <!-- Initial Liquidity -->
-                <div class="token2 p-6 border-4 border-white rounded-lg shadow-md">
-                    <h1 class="text-3xl font-bold mb-4 text-white">TAX & BURN</h1>
-                    <p class="tok   pt-5">0%</p>
-                </div>
-                <!-- addd -->
-                <div class="token3 p-6 border-4 border-white rounded-lg shadow-md">
-                    <h1 class="text-3xl font-bold mb-4 text-white">CONTRACT ADDRESS</Address></h1>
-
-                    <div class="flex justify-center items-center w-full gap-x-3">
-
-                        <div id="hs-clipboard-basic" class=" text-white border  rounded-lg w-full ">
-                            <input id="hs-clipboard-input" type="text"
-                                class="py-3 px-4 block rounded-lg text-sm w-full md:w-full placeholder:text-white  bg-black"
-                                value="0xafe090a314742b79d57657fa6880558b2d55b974">
-                        </div>
-                        <button type="button"
-                            class="js-clipboard p-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border text-white shadow-sm disabled:opacity-50 disabled:pointer-events-none "
-                            data-clipboard-target="#hs-clipboard-basic" data-clipboard-action="copy"
-                            data-clipboard-success-text="Copied" onclick="changeCopyText(this)">
-                            <svg class="js-clipboard-default w-4 h-4 group-hover:rotate-6 transition"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                            </svg>
-
-                            <svg class="js-clipboard-success hidden w-4 h-4 text-blue-600"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </button>
+            <!-- Initial Liquidity -->
+            <div class="token2 p-6 border-4 border-white rounded-lg shadow-md">
+                <h1 class="text-3xl font-bold mb-4 text-white">TAX & BURN</h1>
+                <p class="tok pt-5">0%</p>
+            </div>
+            <!-- Contract Address -->
+            <div class="token3 p-6 border-4 border-white rounded-lg shadow-md">
+                <h1 class="text-3xl font-bold mb-4 text-white">CONTRACT ADDRESS</h1>
+                <div class="flex justify-center items-center w-full gap-x-3">
+                    <div id="clipboard-container" class="text-white border rounded-lg w-full">
+                        <input id="contract-address" type="text"
+                            class="py-3 px-4 block rounded-lg text-sm w-full placeholder:text-white bg-black"
+                            value="0xafe090a314742b79d57657fa6880558b2d55b974" readonly>
                     </div>
+                    <button id="copy-button" type="button"
+                        class="p-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border text-white shadow-sm hover:bg-gray-700"
+                        onclick="copyToClipboard()">
+                        <svg id="copy-icon" class="w-4 h-4 transition" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        </svg>
+                        <span id="copy-text">Copy</span>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- JavaScript -->
+<script>
+    function copyToClipboard() {
+        const addressInput = document.getElementById('contract-address');
+        addressInput.select();
+        addressInput.setSelectionRange(0, 99999); // For mobile devices
+
+        navigator.clipboard.writeText(addressInput.value).then(() => {
+            const copyButton = document.getElementById('copy-button');
+            const copyText = document.getElementById('copy-text');
+            const copyIcon = document.getElementById('copy-icon');
+
+            copyText.textContent = 'Copied!';
+            copyIcon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+
+            setTimeout(() => {
+                copyText.textContent = 'Copy';
+                copyIcon.innerHTML = '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
 
    <!-- Partnership Section -->
 <section id="partnership" class="mt-20" style="background-color: neonorange;">
