@@ -76,55 +76,58 @@
         
         <!-- Content Section -->
 <div class="text-white w-full md:w-1/2 lg:w-1/2 flex flex-col justify-center items-center gap-6 text-center md:text-left">
-    <!-- Headline -->
     <h1 class="text-3xl lg:text-5xl font-extrabold mt-6 lg:mt-0">
-        <span class="text-4xl lg:text-7xl" style="color: rgb(255, 165, 0);">
-            GRUMPY CAT TOKEN
-        </span>
+        <span class="text-4xl lg:text-7xl glow-text"
+            style="background-image: linear-gradient(to right, rgb(255, 200, 124), rgb(255, 160, 82)); 
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;">GRUMPY CAT TOKEN</span>
     </h1>
-    <h2 class="text-xl lg:text-2xl font-bold text-gray-300 mt-2">$GCAT</h2>
-
-    <!-- Buy Button -->
+    
     <a href="https://app.uniswap.org/swap?outputCurrency=0xafe090a314742b79d57657fa6880558b2d55b974&chain=polygon"
-        class="w-full md:w-1/2 lg:w-1/3">
-        <button type="button"
-            class="text-white flex justify-center items-center gap-2 w-full bg-black hover:bg-white hover:text-black border border-white focus:outline-none focus:ring-4 focus:ring-white font-medium rounded-full text-lg px-5 py-2.5">
-            BUY
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
-                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-            </svg>
-        </button>
-    </a>
+                class="w-full md:w-1/2 lg:w-1/3">
+                <button type="button"
+                    class="text-white flex justify-center items-center gap-2 w-full bg-black hover:bg-white hover:text-black border border-white focus:outline-none focus:ring-4 focus:ring-white font-medium rounded-full text-lg px-5 py-2.5">
+                    BUY
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                    </svg>
+                </button>
+            </a>
 
-    <!-- Contract Address Section -->
-    <div class="flex flex-col md:flex-row justify-center items-center gap-3 w-full mt-4">
-        <p class="text-white text-sm text-center md:text-left">Grumpy Cat Token Contract Address:</p>
-        <div id="hs-clipboard-basic" class="text-white border border-blue-500 rounded-lg w-full md:w-1/2">
-            <input id="hs-clipboard-input" type="text"
-                class="py-2 px-3 rounded-lg text-sm w-full placeholder:text-white focus:border-blue-500 focus:ring-blue-500 bg-gray-900 border-gray-700"
-                value="0xafe090a314742b79d57657fa6880558b2d55b974" readonly>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-3 w-full">
+                <p class="text-white text-sm">Grumpy Cat Token Contract Address:</p>
+                <div id="hs-clipboard-basic" class="text-white border border-blue-500 rounded-lg w-full md:w-2/3">
+                    <input id="hs-clipboard-input" type="text"
+                        class="py-2 px-3 rounded-lg text-sm w-full placeholder:text-white focus:border-blue-500 focus:ring-blue-500 bg-gray-900 border-gray-700"
+                        value="0xafe090a314742b79d57657fa6880558b2d55b974" readonly>
+                </div>
+                <button type="button"
+                    id="copy-button"
+                    class="p-2 flex items-center gap-2 text-sm font-medium rounded-lg border border-blue-500 bg-gray-500 text-white hover:bg-blue-600">
+                    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                    </svg>
+                    <span id="copy-text">Copy</span>
+                </button>
+            </div>
+
+            <a href="https://polygonscan.com/token/0xAfE090a314742B79d57657FA6880558b2d55B974"
+                class="text-xl lg:text-2xl text-white underline mt-3">
+                Polygonscan Grumpy Cat Token Explorer
+            </a>
         </div>
-        <button type="button" id="copy-button"
-            class="p-2 flex items-center gap-2 text-sm font-medium rounded-lg border border-blue-500 bg-gray-500 text-white hover:bg-blue-600 md:ml-[-10px]">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
-                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-            </svg>
-            <span id="copy-text">Copy</span>
-        </button>
-    </div>
 
-    <!-- Polygonscan Link -->
-    <div class="w-full text-center mt-6">
-        <a href="https://polygonscan.com/token/0xAfE090a314742B79d57657FA6880558b2d55B974"
-            class="text-xl lg:text-2xl text-white underline">
-            Polygonscan Grumpy Cat Token Explorer
-        </a>
+        <!-- Logo Section -->
+        <div class="w-80 md:w-96 lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+            <img class="w-full max-w-sm" src="images/logo3.png" alt="Grumpy Cat Token Logo">
+        </div>
     </div>
-</div>
+</section>
 
 <!-- JavaScript for Clipboard -->
 <script>
