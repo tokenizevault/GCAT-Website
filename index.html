@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grumpy Cat Token</title>
+
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="dist/output.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="index.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
     <!-- ScrollReveal and Clipboard.js -->
-<scr<!-- ScrollReveal and Clipboard.js -->
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" defer></script>
 
     <link rel="icon" type="image/x-icon" href="images/logo.png">
 </head>
@@ -26,49 +26,119 @@
 <body class="font-Montserrat bg-black">
 
     <!-- Header Section -->
-<nav class="nav-main">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 space-x-3">
-        <!-- Logo Section -->
-        <a href="/" class="flex items-center space-x-2">
-            <img src="images/logo1.png" class="h-10 rounded-full md:h-12" alt="Grumpy Cat Logo" />
-            <span class="md:hidden lg:block text-sm md:text-xl font-extrabold text-blue-500" style="background-image: linear-gradient(to right, rgb(255, 153, 0), rgb(255, 153, 0)); color: transparent; -webkit-background-clip: text; background-clip: text;">Grumpy Cat</span>
-        </a>
-
-        <!-- Mobile Menu Button -->
-        <button id="menuButton" type="button" style="color: rgb(255, 136, 0);" class="inline-flex items-center p-1 w-8 h-8 justify-center text-xs text-white rounded-sm md:hidden hover:bg-cyan-500" onclick="toggleMenu()">
-            <span id="menuIcon">
-                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                </svg>
-            </span>
-        </button>
-
-        <!-- Navbar Links -->
-        <div id="navbar-default" class="hidden w-full md:flex md:items-center md:space-x-6">
-            <ul class="font-medium flex flex-col p-2 md:p-0 mt-2 border rounded md:flex-row md:space-x-6 md:mt-0 md:border-0">
-                <li><a href="#home" class="block py-1 px-2 text-white text-sm lg:text-base hover:text-pink-500">HOME</a></li>
-                <li><a href="#about" class="block py-1 px-2 text-white text-sm lg:text-base hover:text-pink-500">ABOUT</a></li>
-                <li><a href="#roadmap" class="block py-1 px-2 text-white text-sm lg:text-base hover:text-pink-500">ROADMAP</a></li>
-                <li><a href="#tokenomics" class="block py-1 px-2 text-white text-sm lg:text-base hover:text-pink-500">TOKENOMICS</a></li>
-                <li><a href="#partnership" class="block py-1 px-2 text-white text-sm lg:text-base hover:text-pink-500">PARTNERSHIP</a></li>
-                <li><a href="#social" class="block py-1 px-2 text-white text-sm lg:text-base hover:text-pink-500">SOCIALS</a></li>
-                <li><a href="whitepaper.pdf" target="_blank" class="block py-1 px-2 text-white text-sm lg:text-base hover:text-pink-500">WHITEPAPER</a></li>
-            </ul>
-            <!-- Join The Community Button -->
-            <a href="https://linktr.ee/GCATToken" target="_blank" class="ml-4">
-                <button type="button" class="text-white bg-black hover:bg-white hover:text-black border border-white focus:outline-none focus:ring-4 focus:ring-white font-medium rounded-full text-xs px-4 py-1">Join The Community</button>
+    <nav class="nav-main">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 space-x-3">
+            <!-- Logo Section -->
+            <a href="/" class="flex items-center space-x-2">
+                <img src="images/logo1.png" class="h-10 rounded-full md:h-12" alt="Grumpy Cat Logo" loading="lazy">
+                <span class="md:hidden lg:block text-sm md:text-xl font-extrabold text-blue-500"
+                    style="background-image: linear-gradient(to right, rgb(255, 153, 0), rgb(255, 153, 0)); color: transparent; -webkit-background-clip: text; background-clip: text;">Grumpy Cat</span>
             </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuButton" type="button" style="color: rgb(255, 136, 0);"
+                class="inline-flex items-center p-1 w-8 h-8 justify-center text-xs text-white rounded-sm md:hidden hover:bg-cyan-500">
+                <span id="menuIcon">
+                    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div id="navbar-default" class="hidden w-full md:flex md:items-center md:space-x-6">
+                <ul class="font-medium flex flex-col p-2 md:p-0 mt-2 border rounded md:flex-row md:space-x-6 md:mt-0 md:border-0">
+                    <li><a href="#home" class="nav-link">HOME</a></li>
+                    <li><a href="#about" class="nav-link">ABOUT</a></li>
+                    <li><a href="#roadmap" class="nav-link">ROADMAP</a></li>
+                    <li><a href="#tokenomics" class="nav-link">TOKENOMICS</a></li>
+                    <li><a href="#partnership" class="nav-link">PARTNERSHIP</a></li>
+                    <li><a href="#social" class="nav-link">SOCIALS</a></li>
+                    <li><a href="whitepaper.pdf" target="_blank" class="nav-link">WHITEPAPER</a></li>
+                </ul>
+                <a href="https://linktr.ee/GCATToken" target="_blank" class="ml-4">
+                    <button type="button" class="btn-primary">Join The Community</button>
+                </a>
+            </div>
         </div>
-    </div>
-</nav>
-    
+    </nav>
+
     <!-- Sections -->
-<section id="home" class="p-10 text-center text-white">
-    <h1 class="text-4xl font-bold">Welcome to Grumpy Cat</h1>
-    <p>
-        A Community Driven Token Revolutionizing With DeFi Integration and Decentralized Governance.
-    </p>
-</section>
+    <section id="home" class="p-10 text-center text-white">
+        <h1 class="text-4xl font-bold">Welcome to Grumpy Cat</h1>
+        <p>A Community Driven Token Revolutionizing With DeFi Integration and Decentralized Governance.</p>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Debounce function for improved performance
+        function debounce(func, delay) {
+            let timer;
+            return function (...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
+        // Menu Toggle
+        const menuButton = document.getElementById('menuButton');
+        const navbar = document.getElementById('navbar-default');
+
+        menuButton.addEventListener('click', debounce(() => {
+            navbar.classList.toggle('hidden');
+        }, 100));
+
+        // Smooth Scroll for Navbar Links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', debounce((e) => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            }, 50));
+        });
+
+        // ScrollReveal Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            ScrollReveal().reveal('.nav-main', { delay: 200 });
+            ScrollReveal().reveal('#home', { delay: 400 });
+        });
+
+        // Lazy Loading for Images
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+    </script>
+
+    <style>
+        /* Optimized Styles */
+        .nav-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-sm: 0.875rem;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #f472b6;
+        }
+
+        .btn-primary {
+            color: white;
+            background-color: black;
+            border: 1px solid white;
+            border-radius: 9999px;
+            padding: 0.25rem 1rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</body>
+
+</html>
 
     <!-- Hero Section -->
 <section class="flex flex-wrap justify-center items-center relative text-white text-center py-10 bg-cover bg-center">
